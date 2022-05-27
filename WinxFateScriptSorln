@@ -42,3 +42,17 @@ local ohBoolean2 = false
 
 workspace.x_TheVoidx.Invisibility.Invisibility:FireServer(ohString1, ohBoolean2)
 end)
+Section:NewButton("Blooms Incineration Keybind: Z", "ButtonInfo", function()
+    print("Clicked")
+local l__mouse__1 = game.Players.LocalPlayer:GetMouse();
+local u1 = false;
+l__mouse__1.keyDown:Connect(function(p1)
+	p1 = p1:lower();
+	if p1 == "z" and u1 == false then
+		u1 = true;
+		game.ReplicatedStorage.AbilitiesEvents.Pyro:FireServer(l__mouse__1.Target);
+		wait(5);
+		u1 = false;
+	end;
+end);
+end)
